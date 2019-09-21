@@ -63,32 +63,30 @@ $(document).ready(function() {
             <div class="tabelHeading">
               <h3>recently added CHW evaluations | 
                 <small>
-                  <a href="javascript:history.go(-1);">
-                    <div class="label label-warning">
+                  <a href="javascript:history.go(-1);" class="btn btn-warning btn-xs">
                       <i class="fa fa-angle-double-left"></i> back
-                    </div>
-                  </a>&nbsp;
-                  <a href="<?= base_url('chws_evaluations'); ?>">
-                    <div class="label label-primary">
+                  </a>
+                  <a href="<?= base_url('chws_evaluations'); ?>" class="btn btn-primary btn-xs">
                       <i class="fa fa-plus"></i> add new evaluation
-                    </div>
-                  </a>&nbsp;
-                  <a href="<?php echo base_url('chws_evaluations/export_excel'); ?>">
-                    <div class="label label-success">Export to Excel</div>
+                  </a>
+                  <a href="<?php echo base_url('chws_evaluations/export_excel'); ?>" class="btn btn-success btn-xs">
+                    Export to Excel
                   </a>
                 </small>
               </h3>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="tabelHeading">
-              <?php if($success = $this->session->flashdata('success')): ?>
-              <div class="alert alert-success alert-dismissible">
-                <a href="#" class="close" aria-lable="close" data-dismiss="alert">&times;</a>
-                <p class="text-center"><?php echo $success; ?></p>
+          <div class="col-md-4">
+            <form action="" method="get" style="margin-top: 14px; padding-right: 12px;">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Searchs by CNIC" autocomplete="off" required="">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
               </div>
-              <?php endif; ?>
-            </div>
+            </form>
           </div>
         </div>
         <div class="row">

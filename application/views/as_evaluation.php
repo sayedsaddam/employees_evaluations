@@ -418,7 +418,7 @@
 										<i>Sub Total of Section B with 60% performance weightage </i>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="sub_total" class="form-control input-sm">
+										<input type="text" name="sub_total" class="form-control input-sm" readonly="">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -559,7 +559,7 @@
 										<i>Sub Total of Section C with 30% performance weightage</i>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="sub_total" class="form-control input-sm">
+										<input type="text" name="sub_total" class="form-control input-sm" readonly="">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -625,7 +625,7 @@
 										<i>Sub Total of Section D with 10% performance weightage </i>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="sub_total" class="form-control input-sm">
+										<input type="text" name="sub_total" class="form-control input-sm" readonly="">
 									</div>
 								</div><hr>
 								<div class="row" style="background: lightblue;">
@@ -727,6 +727,139 @@
 														</select>
 													</td>
 												</tr>
+												<tr>
+													<td>
+														<input type="date" name="date_of_issue1" class="form-control input-sm">
+													</td>
+													<td>
+														<input type="text" name="warning1" class="form-control input-sm" placeholder="Warning">
+													</td>
+													<td>
+														<select name="reason1" class="form-control input-sm">
+															<option value="">Select Reason</option>
+															<option value="Kinship">Kinship</option>
+															<option value="Locality">Locality</option>
+															<option value="Political Involvement">Political Involvement</option>
+															<option value="Dual Job">Dual Job</option>
+															<option value="Regular Studies">Regular Studies</option>
+															<option value="Financial Embezzlement">Financial Embezzlement</option>
+															<option value="Insubordination">Insubordination</option>
+															<option value="Data Fudging">Data Fudging</option>
+															<option value="Fake Finger Marking">Fake Finger Marking</option>
+															<option value="Misuse of Authority">Misuse of Authority</option>
+															<option value="Sexual Harassment">Sexual Harassment</option>
+															<option value="Bullying and Intimdating attitude">Bullying and Intimdating attitude</option>
+															<option value="Impersonation">Impersonation</option>
+															<option value="Lobbying, grouping, instigation">Lobbying, grouping, instigation</option>
+															<option value="Absenteeism during campaign days">Absenteeism during campaign days</option>
+															<option value="Fake document submission">Fake document submission</option>
+															<option value="Unprofessional Attitude">Unprofessional Attitude</option>
+															<option value="Absenteeism during data validation">Absenteeism during data validation</option>
+															<option value="Absenteeism">Absenteeism</option>
+															<option value="Professional Misconduct">Professional Misconduct</option>
+															<option value="Poor Performance">Poor Performance</option>
+															<option value="Non serious or casual attitude">Non serious or casual attitude</option>
+															<option value="Absenteeism during ordinary days">Absenteeism during ordinary days</option>
+															<option value="Tardiness and Late comer">Tardiness and Late comer</option>
+															<option value="Weak monitoring or supervision skills">Weak monitoring or supervision skills</option>
+															<option value="Missed Children">Missed Children</option>
+															<option value="Weak communication skills">Weak communication skills</option>
+															<option value="Absenteeism during single day in campaign">Absenteeism during single day in campaign</option>
+															<option value="Absenteeism during training">Absenteeism during training</option>
+															<option value="Neglect of duty">Neglect of duty</option>
+															<option value="Absenteeism during evening meeting">Absenteeism during evening meeting</option>
+															<option value="Professional Negligence">Professional Negligence</option>
+															<option value="UC Split">UC Split</option>
+															<option value="Address Change">Address Change</option>
+															<option value="Relocation">Relocation</option>
+															<option value="Health Issues">Health Issues</option>
+															<option value="Marriage">Marriage</option>
+															<option value="Further Studies">Further Studies</option>
+															<option value="Maternity">Maternity</option>
+															<option value="Domestic">Domestic</option>
+															<option value="Outside COMNet">Outside COMNet</option>
+															<option value="Within COMNet">Within COMNet</option>
+															<option value="Outside CBV">Outside CBV</option>
+															<option value="Within CBV">Within CBV</option>
+															<option value="Promotion">Promotion</option>
+															<option value="Inadequate Pay">Inadequate Pay</option>
+															<option value="Security Concerns">Security Concerns</option>
+															<option value="Poor Performance">Poor Performance</option>
+															<option value="Workload">Workload</option>
+															<option value="Family Pressure">Family Pressure</option>
+															<option value="Inappropriate Behaviour of Supervisor">Inappropriate Behaviour of Supervisor</option>
+															<option value="Specified Reason">Specified Reason</option>
+															<option value="Non Renewal of Contract">Non Renewal of Contract</option>
+															<option value="Other">Other</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<input type="date" name="date_of_issue2" class="form-control input-sm">
+													</td>
+													<td>
+														<input type="text" name="warning2" class="form-control input-sm" placeholder="Warning">
+													</td>
+													<td>
+														<select name="reason2" class="form-control input-sm">
+															<option value="">Select Reason</option>
+															<option value="Kinship">Kinship</option>
+															<option value="Locality">Locality</option>
+															<option value="Political Involvement">Political Involvement</option>
+															<option value="Dual Job">Dual Job</option>
+															<option value="Regular Studies">Regular Studies</option>
+															<option value="Financial Embezzlement">Financial Embezzlement</option>
+															<option value="Insubordination">Insubordination</option>
+															<option value="Data Fudging">Data Fudging</option>
+															<option value="Fake Finger Marking">Fake Finger Marking</option>
+															<option value="Misuse of Authority">Misuse of Authority</option>
+															<option value="Sexual Harassment">Sexual Harassment</option>
+															<option value="Bullying and Intimdating attitude">Bullying and Intimdating attitude</option>
+															<option value="Impersonation">Impersonation</option>
+															<option value="Lobbying, grouping, instigation">Lobbying, grouping, instigation</option>
+															<option value="Absenteeism during campaign days">Absenteeism during campaign days</option>
+															<option value="Fake document submission">Fake document submission</option>
+															<option value="Unprofessional Attitude">Unprofessional Attitude</option>
+															<option value="Absenteeism during data validation">Absenteeism during data validation</option>
+															<option value="Absenteeism">Absenteeism</option>
+															<option value="Professional Misconduct">Professional Misconduct</option>
+															<option value="Poor Performance">Poor Performance</option>
+															<option value="Non serious or casual attitude">Non serious or casual attitude</option>
+															<option value="Absenteeism during ordinary days">Absenteeism during ordinary days</option>
+															<option value="Tardiness and Late comer">Tardiness and Late comer</option>
+															<option value="Weak monitoring or supervision skills">Weak monitoring or supervision skills</option>
+															<option value="Missed Children">Missed Children</option>
+															<option value="Weak communication skills">Weak communication skills</option>
+															<option value="Absenteeism during single day in campaign">Absenteeism during single day in campaign</option>
+															<option value="Absenteeism during training">Absenteeism during training</option>
+															<option value="Neglect of duty">Neglect of duty</option>
+															<option value="Absenteeism during evening meeting">Absenteeism during evening meeting</option>
+															<option value="Professional Negligence">Professional Negligence</option>
+															<option value="UC Split">UC Split</option>
+															<option value="Address Change">Address Change</option>
+															<option value="Relocation">Relocation</option>
+															<option value="Health Issues">Health Issues</option>
+															<option value="Marriage">Marriage</option>
+															<option value="Further Studies">Further Studies</option>
+															<option value="Maternity">Maternity</option>
+															<option value="Domestic">Domestic</option>
+															<option value="Outside COMNet">Outside COMNet</option>
+															<option value="Within COMNet">Within COMNet</option>
+															<option value="Outside CBV">Outside CBV</option>
+															<option value="Within CBV">Within CBV</option>
+															<option value="Promotion">Promotion</option>
+															<option value="Inadequate Pay">Inadequate Pay</option>
+															<option value="Security Concerns">Security Concerns</option>
+															<option value="Poor Performance">Poor Performance</option>
+															<option value="Workload">Workload</option>
+															<option value="Family Pressure">Family Pressure</option>
+															<option value="Inappropriate Behaviour of Supervisor">Inappropriate Behaviour of Supervisor</option>
+															<option value="Specified Reason">Specified Reason</option>
+															<option value="Non Renewal of Contract">Non Renewal of Contract</option>
+															<option value="Other">Other</option>
+														</select>
+													</td>
 												</tr>
 											</tbody>
 										</table>
