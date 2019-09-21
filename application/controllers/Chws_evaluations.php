@@ -170,6 +170,14 @@ class Chws_evaluations extends CI_Controller
         $this->session->set_flashdata('success', '<strong>Success ! </strong> Evaluation has been saved successfully !');
         redirect('Chws_evaluations');
     }
+    // Display data from database for AS evaluations.
+    public function recent_as(){
+        $data['title'] = 'Recent Evaluations | Empm Evaluations';
+        $data['content'] = 'recent_as';
+        $data['recent_as'] = $this->Evaluations->get_as_evaluations();
+        var_dump($data['recent_as']); exit;
+        $this->load->view('components/template', $data);
+    }
     // Export the retrieved data to Excel sheet.
     public function export_excel(){
         $fileName = 'CHW Evaluation.xlsx';  

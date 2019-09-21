@@ -22,9 +22,9 @@ class Evaluations extends CI_Model
     		return FALSE;
     	}
     }
-    // Get CHW evaluation from the database.
+    // Get CHW evaluations from the database.
     public function get_chw_evaluations(){
-    	return $this->db->get('chw_evaluations')->result(); // Single-line query.
+    	return $this->db->get('chw_evaluations')->result();
     }
     // Export the saved data to excel sheet.
     public function get_for_excel(){
@@ -41,6 +41,10 @@ class Evaluations extends CI_Model
         }else{
             return FALSE;
         }
+    }
+    // Get AS evaluations from the database.
+    public function get_as_evaluations(){
+        return $this->db->get('as_evaluations')->result();
     }
 }
 

@@ -24,8 +24,8 @@
 						<div class="panel-heading">
 							<div class="row">
 								<div class="col-md-12 text-center">
-									<strong>Employee's Performance Evaluation Form [AS]</strong>
-									<!-- <a href="<?php echo base_url('Perf_login/logout'); ?>" class="btn btn-warning btn-xs">Logout</a> -->
+									<strong>Employee's Performance Evaluation Form [AS]</strong> | 
+								  	<a href="<?php echo base_url('chws_evaluations/recent_as'); ?>" class="btn btn-primary btn-xs">Recently Added <i class="fa fa-angle-double-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -102,7 +102,7 @@
 										<label>Job Title</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="job_title" class="form-control input-sm" required="">
+										<input type="text" name="job_title" class="form-control input-sm" value="AS" readonly="">
 									</div>
 									<div class="col-md-3">
 										<label>Current Assigned UC's</label>
@@ -116,7 +116,7 @@
 										<label>Date of Joining</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="doj" class="form-control input-sm" required="">
+										<input type="date" name="doj" class="form-control input-sm" required="">
 									</div>
 									<div class="col-md-3">
 										<label>Period covered by report</label>
@@ -146,10 +146,10 @@
 										<label>Purpose of Report: </label>
 									</div>
 									<div class="col-md-4">
-										<input type="radio" name="purpose"> <strong>Performance Management</strong>
+										<input type="checkbox" name="purpose" checked=""> <strong>Performance Management</strong>
 									</div>
 									<div class="col-md-4">
-										<input type="radio" name="purpose"> <strong>Renewal of Contract</strong>
+										<input type="checkbox" name="purpose" checked=""> <strong>Renewal of Contract</strong>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -178,7 +178,12 @@
 										<strong>B-1: Capacity building of CHWs</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="b1_record" class="form-control input-sm">
+										<select name="b1_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -222,7 +227,12 @@
 										<strong>B-2: Compilation and verification of data</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="b2_record" class="form-control input-sm">
+										<select name="b2_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -275,7 +285,12 @@
 										<strong>B-3: Ensuring vaccination of Children</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="b3_record" class="form-control input-sm">
+										<select name="b3_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -289,10 +304,15 @@
 								</div><hr>
 								<div class="row">
 									<div class="col-md-10" style="background: lightgrey;">
-										<strong>B-4: Prepartion of Plans / Reporting</strong>
+										<strong>B-4: Preparation of Plans / Reporting</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="b4_record" class="form-control input-sm">
+										<select name="b4_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -336,7 +356,12 @@
 										<strong>B-5: Vaccine cold chain management</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="b5_record" class="form-control input-sm">
+										<select name="b5_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -353,7 +378,12 @@
 										<strong>B-6: Community outreach</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="b6_record" class="form-control input-sm">
+										<select name="b6_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -401,7 +431,12 @@
 										<strong>C-1: Commnication Skills (e.g. has good convincing skills, active listening skills etc.)</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="c1_record" class="form-control input-sm">
+										<select name="c1_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -427,7 +462,12 @@
 										<strong>C-2: Interpersonal Skills (e.g. builds relationship with community, manage multiple stakeholder i,e. UCCSO, AS, UCMO, UCPO etc)</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="c2_record" class="form-control input-sm">
+										<select name="c2_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -444,7 +484,12 @@
 										<strong>C-3: Resilience (e.g. motivated, can keep going despite refusals)</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="c3_record" class="form-control input-sm">
+										<select name="c3_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -461,7 +506,12 @@
 										<strong>C-4: Detail Orientation (enter accurate data, is able to identify discrepancies in data, enters complete data etc)</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="c4_record" class="form-control input-sm">
+										<select name="c4_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -478,7 +528,12 @@
 										<strong>C-5: Teamwork (can work in collaboration with other team members to achieve goals, assists team members)</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="c5_record" class="form-control input-sm">
+										<select name="c5_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -517,7 +572,12 @@
 										<strong>D-1: Attendance and Late Coming</strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="d1_record" class="form-control input-sm">
+										<select name="d1_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -543,7 +603,12 @@
 										<strong>D-2: Previous Adminstrative History in past year (Disciplinary Issues) </strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="d2_record" class="form-control input-sm">
+										<select name="d2_record" class="form-control input-sm" required="">
+											<option value="">Select an Option</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -590,7 +655,7 @@
 											<thead>
 												<tr>
 													<th>Date of Issue</th>
-													<th>Warning / Explanation</th>
+													<th>Warning</th>
 													<th>Reason</th>
 												</tr>
 											</thead>
@@ -600,10 +665,66 @@
 														<input type="date" name="date_of_issue" class="form-control input-sm">
 													</td>
 													<td>
-														<input type="text" name="warning" class="form-control input-sm" placeholder="Warning / Explanation">
+														<input type="text" name="warning" class="form-control input-sm" placeholder="Warning">
 													</td>
 													<td>
-														<textarea name="reason" rows="2" class="form-control input-sm" placeholder="Reason in detail"></textarea>
+														<select name="reason" class="form-control input-sm">
+															<option value="">Select Reason</option>
+															<option value="Kinship">Kinship</option>
+															<option value="Locality">Locality</option>
+															<option value="Political Involvement">Political Involvement</option>
+															<option value="Dual Job">Dual Job</option>
+															<option value="Regular Studies">Regular Studies</option>
+															<option value="Financial Embezzlement">Financial Embezzlement</option>
+															<option value="Insubordination">Insubordination</option>
+															<option value="Data Fudging">Data Fudging</option>
+															<option value="Fake Finger Marking">Fake Finger Marking</option>
+															<option value="Misuse of Authority">Misuse of Authority</option>
+															<option value="Sexual Harassment">Sexual Harassment</option>
+															<option value="Bullying and Intimdating attitude">Bullying and Intimdating attitude</option>
+															<option value="Impersonation">Impersonation</option>
+															<option value="Lobbying, grouping, instigation">Lobbying, grouping, instigation</option>
+															<option value="Absenteeism during campaign days">Absenteeism during campaign days</option>
+															<option value="Fake document submission">Fake document submission</option>
+															<option value="Unprofessional Attitude">Unprofessional Attitude</option>
+															<option value="Absenteeism during data validation">Absenteeism during data validation</option>
+															<option value="Absenteeism">Absenteeism</option>
+															<option value="Professional Misconduct">Professional Misconduct</option>
+															<option value="Poor Performance">Poor Performance</option>
+															<option value="Non serious or casual attitude">Non serious or casual attitude</option>
+															<option value="Absenteeism during ordinary days">Absenteeism during ordinary days</option>
+															<option value="Tardiness and Late comer">Tardiness and Late comer</option>
+															<option value="Weak monitoring or supervision skills">Weak monitoring or supervision skills</option>
+															<option value="Missed Children">Missed Children</option>
+															<option value="Weak communication skills">Weak communication skills</option>
+															<option value="Absenteeism during single day in campaign">Absenteeism during single day in campaign</option>
+															<option value="Absenteeism during training">Absenteeism during training</option>
+															<option value="Neglect of duty">Neglect of duty</option>
+															<option value="Absenteeism during evening meeting">Absenteeism during evening meeting</option>
+															<option value="Professional Negligence">Professional Negligence</option>
+															<option value="UC Split">UC Split</option>
+															<option value="Address Change">Address Change</option>
+															<option value="Relocation">Relocation</option>
+															<option value="Health Issues">Health Issues</option>
+															<option value="Marriage">Marriage</option>
+															<option value="Further Studies">Further Studies</option>
+															<option value="Maternity">Maternity</option>
+															<option value="Domestic">Domestic</option>
+															<option value="Outside COMNet">Outside COMNet</option>
+															<option value="Within COMNet">Within COMNet</option>
+															<option value="Outside CBV">Outside CBV</option>
+															<option value="Within CBV">Within CBV</option>
+															<option value="Promotion">Promotion</option>
+															<option value="Inadequate Pay">Inadequate Pay</option>
+															<option value="Security Concerns">Security Concerns</option>
+															<option value="Poor Performance">Poor Performance</option>
+															<option value="Workload">Workload</option>
+															<option value="Family Pressure">Family Pressure</option>
+															<option value="Inappropriate Behaviour of Supervisor">Inappropriate Behaviour of Supervisor</option>
+															<option value="Specified Reason">Specified Reason</option>
+															<option value="Non Renewal of Contract">Non Renewal of Contract</option>
+															<option value="Other">Other</option>
+														</select>
 													</td>
 												</tr>
 												</tr>
@@ -715,7 +836,7 @@
 								</div><hr>
 								<div class="row">
 										<div class="col-md-3">
-											<label>Name: </label>
+											<label>Name of CTC Staff: </label>
 										</div>
 										<div class="col-md-3">
 											<input type="text" name="ctc_name" class="form-control input-sm">
@@ -751,7 +872,7 @@
 									</div><br>
 									<div class="row">
 										<div class="col-md-2">
-											Filled by: 
+											<label>Filled by: </label>
 										</div>
 										<div class="col-md-4">
 											<input type="text" name="filler_name" class="form-control input-sm">
@@ -759,7 +880,7 @@
 									</div><br>
 									<div class="row">
 										<div class="col-md-2">
-											Category C:
+											<label>Designation:</label>
 										</div>
 										<div class="col-md-4">
 											<select name="filler_desig" class="form-control input-sm" required="">
