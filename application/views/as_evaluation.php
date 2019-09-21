@@ -1,7 +1,7 @@
 <?php 
 /*
-* Filename: performance_eval.php
-* Filepath: views / performance_evaluation / performance_eval.php
+* Filename: as_evaluation.php
+* Filepath: views / as_evaluation.php
 * Author: Saddam
 */
 ?>
@@ -39,13 +39,13 @@
 										<label>Employee's CNIC</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="emp_cnic" class="form-control input-sm">
+										<input type="text" name="emp_cnic" class="form-control input-sm" required="">
 									</div>
 									<div class="col-md-3">
 										<label>Employee ID (HRIS)</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="emp_id" class="form-control input-sm">
+										<input type="text" name="emp_id" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -53,27 +53,34 @@
 										<label>Employee Name</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="emp_name" class="form-control input-sm">
+										<input type="text" name="emp_name" class="form-control input-sm" required="">
 									</div>
 									<div class="col-md-3">
 										<label>Father/Husband Name</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="emp_father" class="form-control input-sm">
+										<input type="text" name="emp_father" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
 									<div class="col-md-3">
-										<label>Job Title</label>
+										<label>Province</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="job_title" class="form-control input-sm">
+										<select name="province" class="form-control input-sm" required="">
+											<option value="">Select Province</option>
+											<option value="Khyber Pakhtoonkhwa">Khyber Pakhtoonkhwa</option>
+											<option value="Punjab">Punjab</option>
+											<option value="Balochistan">Balochistan</option>
+											<option value="Sindh">Sindh</option>
+											<option value="Gilgit Baltistan">Gilgit Baltistan</option>
+										</select>
 									</div>
 									<div class="col-md-3">
 										<label>District</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="district" class="form-control input-sm">
+										<input type="text" name="district" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -81,13 +88,27 @@
 										<label>Town</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="town" class="form-control input-sm">
+										<input type="text" name="town" class="form-control input-sm" required="">
+									</div>
+									<div class="col-md-3">
+										<label>Area</label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" name="area" class="form-control input-sm" required="">
+									</div>
+								</div><hr>
+								<div class="row">
+									<div class="col-md-3">
+										<label>Job Title</label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" name="job_title" class="form-control input-sm" required="">
 									</div>
 									<div class="col-md-3">
 										<label>Current Assigned UC's</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="assignd_ucs" class="form-control input-sm">
+										<input type="text" name="assigned_ucs" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -95,21 +116,29 @@
 										<label>Date of Joining</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="doj" class="form-control input-sm">
+										<input type="text" name="doj" class="form-control input-sm" required="">
 									</div>
 									<div class="col-md-3">
 										<label>Period covered by report</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="period" class="form-control input-sm">
+										<input type="text" name="period" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
 									<div class="col-md-7">
-										Appraisal Conducted by (First and Second level Supervisior Name & Designation):
+										Appraisal Conducted by (First level Supervisior Name & Designation):
 									</div>
 									<div class="col-md-5">
-										<input type="text" name="name_desig" class="form-control input-sm">
+										<input type="text" name="name_desig" class="form-control input-sm" required="">
+									</div>
+								</div><hr>
+								<div class="row">
+									<div class="col-md-7">
+										Appraisal Conducted by (Second level Supervisior Name & Designation):
+									</div>
+									<div class="col-md-5">
+										<input type="text" name="sec_desig" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -514,7 +543,7 @@
 										<strong>D-2: Previous Adminstrative History in past year (Disciplinary Issues) </strong>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="d1_record" class="form-control input-sm">
+										<input type="text" name="d2_record" class="form-control input-sm">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -616,7 +645,7 @@
 								</div><hr>
 								<div class="row">
 									<div class="col-md-12">
-										<textarea name="career" class="form-control" rows="5"></textarea>
+										<textarea name="staff_comments" class="form-control" rows="5"></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -714,7 +743,7 @@
 									</div><hr>
 									<div class="row">
 										<div class="col-md-2">
-											Category A:
+											Category: 
 										</div>
 										<div class="col-md-4">
 											<input type="text" name="cat_a" class="form-control input-sm">
@@ -722,10 +751,10 @@
 									</div><br>
 									<div class="row">
 										<div class="col-md-2">
-											Category B:
+											Filled by: 
 										</div>
 										<div class="col-md-4">
-											<input type="text" name="cat_a" class="form-control input-sm">
+											<input type="text" name="filler_name" class="form-control input-sm">
 										</div>
 									</div><br>
 									<div class="row">
@@ -733,7 +762,15 @@
 											Category C:
 										</div>
 										<div class="col-md-4">
-											<input type="text" name="cat_a" class="form-control input-sm">
+											<select name="filler_desig" class="form-control input-sm" required="">
+												<option value="">Select Designation</option>
+												<option value="Regional Manager">Regional Manager</option>
+												<option value="District Manager">District Manager</option>
+												<option value="Town Manager">Town Manager</option>
+												<option value="Project Officer">Project Officer</option>
+												<option value="Project Associate">Project Associate</option>
+												<option value="Data Entry Operator">Data Entry Operator</option>
+											</select>
 										</div>
 									</div>
 									<div class="row">
