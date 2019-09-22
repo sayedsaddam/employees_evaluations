@@ -91,24 +91,24 @@
 										<input type="text" name="town" class="form-control input-sm" required="">
 									</div>
 									<div class="col-md-3">
+										<label>Current Assigned UC's</label>
+									</div>
+									<div class="col-md-3">
+										<input type="text" name="assigned_ucs" class="form-control input-sm" required="">
+									</div>
+								</div><hr>
+								<div class="row">
+									<div class="col-md-3">
 										<label>Area / Sub Area</label>
 									</div>
 									<div class="col-md-3">
 										<input type="text" name="area" class="form-control input-sm" required="">
 									</div>
-								</div><hr>
-								<div class="row">
 									<div class="col-md-3">
 										<label>Job Title</label>
 									</div>
 									<div class="col-md-3">
 										<input type="text" name="job_title" class="form-control input-sm" value="CHW" readonly="">
-									</div>
-									<div class="col-md-3">
-										<label>Current Assigned UC's</label>
-									</div>
-									<div class="col-md-3">
-										<input type="text" name="assigned_ucs" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -119,26 +119,32 @@
 										<input type="date" name="doj" class="form-control input-sm" required="">
 									</div>
 									<div class="col-md-3">
-										<label>Period covered by report</label>
+										<label>Period covered by Performance Appraisal</label>
 									</div>
 									<div class="col-md-3">
 										<input type="text" name="period" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
-									<div class="col-md-7">
+									<div class="col-md-6">
 										Appraisal Conducted by (First level Supervisor Name & Designation):
 									</div>
-									<div class="col-md-5">
-										<input type="text" name="name_desig" class="form-control input-sm" required="">
+									<div class="col-md-3">
+										<input type="text" name="name_desig" class="form-control input-sm" required="" placeholder="Name...">
+									</div>
+									<div class="col-md-3">
+										<input type="text" name="desig_first" class="form-control input-sm" required="" placeholder="Designation...">
 									</div>
 								</div><hr>
 								<div class="row">
-									<div class="col-md-7">
+									<div class="col-md-6">
 										Appraisal Conducted by (Second level Supervisor Name & Designation):
 									</div>
-									<div class="col-md-5">
-										<input type="text" name="sec_desig" class="form-control input-sm" required="">
+									<div class="col-md-3">
+										<input type="text" name="sec_desig" class="form-control input-sm" required="" placeholder="Name...">
+									</div>
+									<div class="col-md-3">
+										<input type="text" name="desig_sec" class="form-control input-sm" required="" placeholder="Designation...">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -179,7 +185,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="b1_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -191,7 +197,7 @@
 										B-1.1
 									</div>
 									<div class="col-md-10">
-										Updated registration of  children under 5 years of age of the assigned area (especially before evry campaign)
+										Updated registration of  children under 5 years of age of the assigned area (especially before every campaign)
 									</div>
 									<div class="col-md-2"></div>
 								</div><hr>
@@ -246,7 +252,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="b2_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -295,7 +301,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="b3_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -344,7 +350,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="b4_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -384,7 +390,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="b5_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -415,7 +421,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="b6_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -459,7 +465,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="c1_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -481,7 +487,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="c2_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -503,7 +509,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="c3_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -525,7 +531,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="c4_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -547,7 +553,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="c5_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -591,7 +597,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="d1_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -622,7 +628,7 @@
 									</div>
 									<div class="col-md-2">
 										<select name="d2_record" class="form-control input-sm" required="">
-											<option value="">Select an Option</option>
+											<option value="">Select Score</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -656,10 +662,10 @@
 								</div><hr>
 								<div class="row" style="background: lightblue;">
 									<div class="col-md-10 text-center" style="background: lightblue;">
-										<strong>APPRAISAL SCORE</strong>
+										<strong>TOTAL APPRAISAL SCORE</strong>
 									</div>
 									<div class="col-md-2">
-										<strong>B</strong>
+										<input type="text" name="" class="form-control input-sm" readonly="">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -1018,7 +1024,7 @@
 											Category: 
 										</div>
 										<div class="col-md-4">
-											<input type="text" name="cat_a" class="form-control input-sm">
+											<input type="text" name="cat_a" class="form-control input-sm" readonly="">
 										</div>
 									</div><br>
 									<div class="row">
