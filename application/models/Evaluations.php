@@ -26,6 +26,13 @@ class Evaluations extends CI_Model
     public function get_chw_evaluations(){
     	return $this->db->get('chw_evaluations')->result();
     }
+    // Search in CHW evaluations.
+    public function search_chws($cnic = ''){
+        $this->db->select('*');
+        $this->db->from('chw_evaluations');
+        $this->db->where('emp_cnic', $cnic);
+        return $this->db->get()->row();
+    }
     // Export the saved data to excel sheet.
     public function get_for_excel(){
         $this->db->select('*');

@@ -77,9 +77,9 @@ $(document).ready(function() {
             </div>
           </div>
           <div class="col-md-4">
-            <form action="" method="get" style="margin-top: 14px; padding-right: 12px;">
+            <form action="<?php echo base_url('chws_evaluations/search_chws'); ?>" method="get" style="margin-top: 14px; padding-right: 12px;">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Searchs by CNIC" autocomplete="off" required="">
+                <input type="text" class="form-control" placeholder="Search by CNIC" autocomplete="off" required="" name="if_you_can_not_remember_then_why_are_you_here?">
                   <div class="input-group-btn">
                     <button class="btn btn-default" type="submit">
                       <i class="fa fa-search"></i>

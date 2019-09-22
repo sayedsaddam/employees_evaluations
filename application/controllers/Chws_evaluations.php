@@ -114,6 +114,12 @@ class Chws_evaluations extends CI_Controller
     	$data['recent_chws'] = $this->Evaluations->get_chw_evaluations();
         $this->load->view('components/template', $data);
     }
+    // Search CHW's
+    public function search_chws(){
+        $cnic = $this->input->get('if_you_can_not_remember_then_why_are_you_here?');
+        $data = $this->Evaluations->search_chws($cnic);
+        var_dump($data);
+    }
     // Save AS evaluation into the database.
     public function save_as_eval(){
         $data = array(
