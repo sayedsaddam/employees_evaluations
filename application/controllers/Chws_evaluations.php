@@ -296,7 +296,6 @@ class Chws_evaluations extends CI_Controller
         $data['title'] = 'Recent Evaluations | Empm Evaluations';
         $data['content'] = 'recent_as';
         $data['recent_as'] = $this->Evaluations->get_as_evaluations();
-        var_dump($data['recent_as']); exit;
         $this->load->view('components/template', $data);
     }
     // Export the retrieved data to Excel sheet.
