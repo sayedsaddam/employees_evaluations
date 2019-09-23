@@ -292,10 +292,37 @@ class Chws_evaluations extends CI_Controller
         redirect('Chws_evaluations');
     }
     // Display data from database for AS evaluations.
-    public function recent_as(){
+    public function recent_as($offset = NULL){
+      $limit = 10;
+      if(!empty($offset)){
+        $this->uri->segment(3);
+      }
+      $this->load->library('pagination');
+        $config['uri_segment'] = 3;
+        $config['base_url'] = base_url('Chws_evaluations/recent_chws');
+        $config['total_rows'] = $this->Evaluations->count_as();
+        $config['per_page'] = $limit;
+        $config['num_links'] = 10;
+        $config["full_tag_open"] = '<ul class="pagination">';
+        $config["full_tag_close"] = '</ul>';
+        $config["first_tag_open"] = '<li>';
+        $config["first_tag_close"] = '</li>';
+        $config["last_tag_open"] = '<li>';
+        $config["last_tag_close"] = '</li>';
+        $config['next_link'] = 'next &raquo;';
+        $config["next_tag_open"] = '<li>';
+        $config["next_tag_close"] = '</li>';
+        $config["prev_link"] = "prev &laquo;";
+        $config["prev_tag_open"] = "<li>";
+        $config["prev_tag_close"] = "</li>";
+        $config["cur_tag_open"] = "<li class='active'><a href='javascript:void(0);'>";
+        $config["cur_tag_close"] = "</a></li>";
+        $config["num_tag_open"] = "<li>";
+        $config["num_tag_close"] = "</li>";
+        $this->pagination->initialize($config);
         $data['title'] = 'Recent Evaluations | Empm Evaluations';
         $data['content'] = 'recent_as';
-        $data['recent_as'] = $this->Evaluations->get_as_evaluations();
+        $data['recent_as'] = $this->Evaluations->get_as_evaluations($limit, $offset);
         $this->load->view('components/template', $data);
     }
     // Export the retrieved data to Excel sheet.

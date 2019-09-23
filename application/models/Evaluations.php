@@ -69,9 +69,36 @@ class Evaluations extends CI_Model
             return FALSE;
         }
     }
+    // Count AS evaluations in the database so to create pagination.
+    public function count_as(){
+        return $this->db->from('as_evaluations')->count_all_results();
+    }
     // Get AS evaluations from the database.
-    public function get_as_evaluations(){
-        return $this->db->get('as_evaluations')->result();
+    public function get_as_evaluations($limit, $offset){
+        $this->db->select('*');
+        $this->db->from('as_evaluations');
+        $this->db->limit($limit, $offset);
+        return $this->db->get()->result();
+    }
+    // Search AS evaluations.
+    public function search_as($cnic = ''){
+        $this->db->select('*');
+        $this->db->from('as_evaluations');
+        $this->db->where('emp_cnic', $cnic);
+        return $this->db->get()->row();
+    }
+    // Get AS for Edit.
+    public function edit_as($as_id){
+        $this->db->select('*');
+        $this->db->from('as_evaluations');
+        $this->db->where('as_id', $as_id);
+        return $this->db->get()->row();
+    }
+    // Update AS evaluations.
+    public function update_as($as_id = '', $data = ''){
+        $this->db->where('as_id', $as_id);
+        $this->db->update('as_evaluations', $data);
+        return true;
     }
 }
 
