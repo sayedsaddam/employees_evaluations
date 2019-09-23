@@ -1,7 +1,7 @@
 <?php 
 /*
-* Filename: recent_tcsp.php
-* Filepath: views / performance_evaluation / recent_tcsp.php
+* Filename: recent_chws.php
+* Filepath: views / recent_chws.php
 * Author: Saddam
 */
 ?>
@@ -61,7 +61,8 @@ $(document).ready(function() {
         <div class="row">
           <div class="col-md-8">
             <div class="tabelHeading">
-              <h3>recently added CHW evaluations | 
+              <h3><?php if(empty($search_results)): ?> recently added CHW evaluations | <?php else: ?>
+                search results | <?php endif; ?>
                 <small>
                   <a href="javascript:history.go(-1);" class="btn btn-warning btn-xs">
                       <i class="fa fa-angle-double-left"></i> back
@@ -79,7 +80,7 @@ $(document).ready(function() {
           <div class="col-md-4">
             <form action="<?php echo base_url('chws_evaluations/search_chws'); ?>" method="get" style="margin-top: 14px; padding-right: 12px;">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search by CNIC" autocomplete="off" required="" name="if_you_can_not_remember_then_why_are_you_here?">
+                <input type="text" class="form-control" placeholder="Search by CNIC" autocomplete="off" required="" name="search_record">
                   <div class="input-group-btn">
                     <button class="btn btn-default" type="submit">
                       <i class="fa fa-search"></i>
@@ -89,6 +90,15 @@ $(document).ready(function() {
             </form>
           </div>
         </div>
+        <?php if($success = $this->session->flashdata('success')): ?>
+        <div class="row text-center">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="alert alert-success">
+              <p class="text-center"><?php echo $success; ?></p>
+            </div>
+          </div>
+        </div>
+        <?php endif; ?>
         <div class="row">
           <div class="col-md-12">
             <div class="tableMain">
@@ -110,8 +120,10 @@ $(document).ready(function() {
                       <th>sec-D sub total</th>
                       <th>supervisor</th>
                       <th>evaluation date</th>
+                      <th>action</th>
                     </tr>
                   </thead>
+                  <?php if(empty($search_results)): ?>
                   <tbody id="filter_results">
                     <?php foreach($recent_chws as $rec_evals): ?>
                     <tr>
@@ -157,20 +169,74 @@ $(document).ready(function() {
                       <td>
                         <?php echo date('M d, Y', strtotime($rec_evals->created_at)); ?>
                       </td>
+                      <td>
+                        <a href="<?php echo base_url(); ?>chws_evaluations/edit_chws/<?php echo $rec_evals->chw_id; ?>" class="btn btn-primary btn-xs">Edit</a>
+                      </td>
                     </tr>
                     <?php endforeach; ?>
                   </tbody>
+                  <?php elseif(!empty($search_results)): ?>
+                  <tbody id="filter_results">
+                    <tr>
+                      <td>
+                        <?php echo $search_results->emp_id; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->emp_name; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->emp_cnic; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->emp_fname; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->job_title; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->emp_district; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->doj; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->period_covered; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->rep_purpose; ?>
+                      </td>
+                      <td>
+                        <?php echo $total =  $search_results->b1_record + $search_results->b2_record + $search_results->b3_record + $search_results->b4_record + $search_results->b5_record + $search_results->b6_record; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->c1_record + $search_results->c2_record + $search_results->c3_record + $search_results->c4_record + $search_results->c4_record; ?>
+                      </td>
+                      <td>
+                        <?php echo $search_results->d1_record + $search_results->d2_record; ?>
+                      </td>
+                      <td>
+                      <?php echo $search_results->sup_name_desig; ?>
+                      </td>
+                      <td>
+                        <?php echo date('M d, Y', strtotime($search_results->created_at)); ?>
+                      </td>
+                      <td>
+                        <a href="<?php echo base_url(); ?>chws_evaluations/edit_chws/<?php echo $search_results->chw_id; ?>" class="btn btn-primary btn-xs">Edit</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                <?php endif; ?>
                 </table>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8 text-center">
-            <?php //echo $this->pagination->create_links(); ?>
+          <div class="col-md-1"></div>
+          <div class="col-md-10 text-center">
+            <?php if(empty($search_results)){ echo $this->pagination->create_links(); } ?>
           </div>
-          <div class="col-md-2"></div>
+          <div class="col-md-1"></div>
         </div>
       </div>
     </section>

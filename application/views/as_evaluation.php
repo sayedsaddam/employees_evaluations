@@ -74,6 +74,7 @@
 											<option value="Balochistan">Balochistan</option>
 											<option value="Sindh">Sindh</option>
 											<option value="Gilgit Baltistan">Gilgit Baltistan</option>
+											<option value="KP-TD">KP-TD</option>
 										</select>
 									</div>
 									<div class="col-md-3">
@@ -668,13 +669,13 @@
 											<tbody>
 												<tr>
 													<td>
-														<input type="date" name="date_of_issue" class="form-control input-sm">
+														<input type="date" name="date_of_issue" class="form-control input-sm" required="">
 													</td>
 													<td>
-														<input type="text" name="warning" class="form-control input-sm" placeholder="Warning">
+														<input type="text" name="warning" class="form-control input-sm" required="" placeholder="Warning">
 													</td>
 													<td>
-														<select name="reason" class="form-control input-sm">
+														<select name="reason" class="form-control input-sm" required="">
 															<option value="">Select Reason</option>
 															<option value="Kinship">Kinship</option>
 															<option value="Locality">Locality</option>
@@ -735,13 +736,13 @@
 												</tr>
 												<tr>
 													<td>
-														<input type="date" name="date_of_issue1" class="form-control input-sm">
+														<input type="date" name="date_of_issue1" class="form-control input-sm" required="">
 													</td>
 													<td>
-														<input type="text" name="warning1" class="form-control input-sm" placeholder="Warning">
+														<input type="text" name="warning1" class="form-control input-sm" required="" placeholder="Warning">
 													</td>
 													<td>
-														<select name="reason1" class="form-control input-sm">
+														<select name="reason1" class="form-control input-sm" required="">
 															<option value="">Select Reason</option>
 															<option value="Kinship">Kinship</option>
 															<option value="Locality">Locality</option>
@@ -802,13 +803,13 @@
 												</tr>
 												<tr>
 													<td>
-														<input type="date" name="date_of_issue2" class="form-control input-sm">
+														<input type="date" name="date_of_issue2" class="form-control input-sm" required="">
 													</td>
 													<td>
-														<input type="text" name="warning2" class="form-control input-sm" placeholder="Warning">
+														<input type="text" name="warning2" class="form-control input-sm" required="" placeholder="Warning">
 													</td>
 													<td>
-														<select name="reason2" class="form-control input-sm">
+														<select name="reason2" class="form-control input-sm" required="">
 															<option value="">Select Reason</option>
 															<option value="Kinship">Kinship</option>
 															<option value="Locality">Locality</option>
@@ -884,7 +885,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<p>Describe atleast one learing activity that you have pursued during the reporting period and also the activity you would like to carry out during the next reporting period</p>
-										<textarea name="learing" class="form-control" rows="5"></textarea>
+										<textarea name="learing" class="form-control" rows="5" required=""></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -895,7 +896,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<p>Describe your future career aspirations indicating newly acquired skills and competencies as well as development needs (Optional)</p>
-										<textarea name="career" class="form-control" rows="5"></textarea>
+										<textarea name="career" class="form-control" rows="5" required=""></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -905,18 +906,18 @@
 								</div><hr>
 								<div class="row">
 									<div class="col-md-12">
-										<textarea name="staff_comments" class="form-control" rows="5"></textarea>
+										<textarea name="staff_comments" class="form-control" rows="5" required=""></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
 									<div class="col-md-4">
-										<input type="text" name="staff_name" class="form-control input-sm" placeholder="Staff member name...">
+										<input type="text" name="staff_name" class="form-control input-sm" placeholder="Staff member name..." required="">
 									</div>
 									<div class="col-md-4">
-										<input type="text" name="staff_sign" class="form-control input-sm" placeholder="Signature">
+										<input type="text" name="staff_sign" class="form-control input-sm" placeholder="Signature" required="">
 									</div>
 									<div class="col-md-4">
-										<input type="date" name="staff_date" class="form-control input-sm">
+										<input type="date" name="staff_date" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -928,11 +929,11 @@
 									<div class="col-md-12">
 										<strong>First Reporting Officer- Area Supervisor</strong><br><br>
 										Would you consider the staff member for a contract extension? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="town_comments" value="Yes"> YES &nbsp;&nbsp;&nbsp;
-										<input type="radio" name="town_comments" value="No"> NO <br><br>
+										<input type="radio" name="town_comments" value="Yes" required=""> YES &nbsp;&nbsp;&nbsp;
+										<input type="radio" name="town_comments" value="No" required=""> NO <br><br>
 										Is the staff Member more suited for some other type of work/promotion other than that in which he/she is employed? If so, state the functions which are suited to his/her ability <br>
 										<strong>Remarks: </strong>
-										<textarea name="remarks" class="form-control" rows="4"></textarea>
+										<textarea name="remarks" class="form-control" rows="4" required=""></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -940,13 +941,13 @@
 										<label>Name of second reporting officer: </label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="second_officer" class="form-control input-sm">
+										<input type="text" name="second_officer" class="form-control input-sm" required="">
 									</div>
 									<div class="col-md-3">
 										<label>Title: </label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="second_title" class="form-control input-sm">
+										<input type="text" name="second_title" class="form-control input-sm" required="">
 									</div>
 								</div><br>
 								<div class="row">
@@ -954,23 +955,23 @@
 										<label>Signature: </label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="second_sign" class="form-control input-sm">
+										<input type="text" name="second_sign" class="form-control input-sm" required="">
 									</div>
 									<div class="col-md-3">
 										<label>Date: </label>
 									</div>
 									<div class="col-md-3">
-										<input type="date" name="second_date" class="form-control input-sm">
+										<input type="date" name="second_date" class="form-control input-sm" required="">
 									</div>
 								</div><hr>
 								<div class="row">
 									<div class="col-md-12">
 										<strong>CTC District/Town Coordinator</strong><br>
 										Would you consider the staff member for a contract extension? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="ctc_coord" value="Yes"> YES &nbsp;&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="ctc_coord" value="No"> NO <br><br>
+										<input type="radio" name="ctc_coord" value="Yes" required=""> YES &nbsp;&nbsp;&nbsp;&nbsp;
+										<input type="radio" name="ctc_coord" value="No" required=""> NO <br><br>
 										<strong>Remarks: </strong>
-										<textarea name="ctc_coord_remarks" class="form-control" rows="4"></textarea>
+										<textarea name="ctc_coord_remarks" class="form-control" rows="4" required=""></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -978,13 +979,13 @@
 											<label>Name of CTC Staff: </label>
 										</div>
 										<div class="col-md-3">
-											<input type="text" name="ctc_name" class="form-control input-sm">
+											<input type="text" name="ctc_name" class="form-control input-sm" required="">
 										</div>
 										<div class="col-md-3">
 											<label>Title: </label>
 										</div>
 										<div class="col-md-3">
-											<input type="text" name="ctc_title" class="form-control input-sm">
+											<input type="text" name="ctc_title" class="form-control input-sm" required="">
 										</div>
 									</div><br>
 									<div class="row">
@@ -998,7 +999,7 @@
 											<label>Date: </label>
 										</div>
 										<div class="col-md-3">
-											<input type="date" name="ctc_date" class="form-control input-sm">
+											<input type="date" name="ctc_date" class="form-control input-sm" required="">
 										</div>
 									</div><hr>
 									<div class="row">
@@ -1014,7 +1015,7 @@
 											<label>Filled by: </label>
 										</div>
 										<div class="col-md-4">
-											<input type="text" name="filler_name" class="form-control input-sm">
+											<input type="text" name="filler_name" class="form-control input-sm" required="">
 										</div>
 									</div><br>
 									<div class="row">

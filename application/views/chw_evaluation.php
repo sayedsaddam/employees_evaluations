@@ -30,22 +30,22 @@
 							</div>
 						</div>
 						<div class="panel-body">
-							<?php //if(!empty($this->uri->segment(3))): ?>
 							<!-- General and PTPP holder's different skills, starts here... -->
-							<form action="<?= base_url('chws_evaluations/save_chw_eval'); ?>" method="post">
+							<form action="<?php if(empty(@$edit)){ echo base_url('chws_evaluations/save_chw_eval'); }else{ echo base_url("chws_evaluations/update_chws"); } ?>" method="post">
+								<input type="hidden" name="chw_id" value="<?php echo $this->uri->segment(3); ?>">
 								<p class="text-center"><strong>Section A: To be completed by First Level Supervisor</strong></p>
 								<div class="row">
 									<div class="col-md-3">
 										<label>Employee's CNIC</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="emp_cnic" class="form-control input-sm" required="">
+										<input type="text" name="emp_cnic" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->emp_cnic; }?>">
 									</div>
 									<div class="col-md-3">
 										<label>Employee ID (HRIS)</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="emp_id" class="form-control input-sm" required="">
+										<input type="text" name="emp_id" class="form-control input-sm" required=""value="<?php if(!empty(@$edit)){ echo @$edit->emp_id; }?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -53,13 +53,13 @@
 										<label>Employee Name</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="emp_name" class="form-control input-sm" required="">
+										<input type="text" name="emp_name" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->emp_name; }?>">
 									</div>
 									<div class="col-md-3">
 										<label>Father/Husband Name</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="emp_father" class="form-control input-sm" required="">
+										<input type="text" name="emp_father" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->emp_fname; }?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -69,18 +69,16 @@
 									<div class="col-md-3">
 										<select name="province" class="form-control input-sm" required="">
 											<option value="">Select Province</option>
-											<option value="Khyber Pakhtoonkhwa">Khyber Pakhtoonkhwa</option>
-											<option value="Punjab">Punjab</option>
-											<option value="Balochistan">Balochistan</option>
-											<option value="Sindh">Sindh</option>
-											<option value="Gilgit Baltistan">Gilgit Baltistan</option>
+											<option value="Khyber Pakhtoonkhwa" <?php if(!empty(@$edit AND @$edit->province == 'Khyber Pakhtoonkhwa')){ echo 'selected'; } ?>>Khyber Pakhtoonkhwa</option>
+											<option value="Balochistan" <?php if(!empty(@$edit AND @$edit->province == 'Balochistan')){ echo 'selected'; } ?>>Balochistan</option>
+											<option value="KP-TD" <?php if(!empty(@$edit AND @$edit->province == 'KP-TD')){ echo 'selected'; } ?>>KP-TD</option>
 										</select>
 									</div>
 									<div class="col-md-3">
 										<label>District</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="district" class="form-control input-sm" required="">
+										<input type="text" name="district" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->emp_district; }?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -88,13 +86,13 @@
 										<label>Town</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="town" class="form-control input-sm" required="">
+										<input type="text" name="town" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->emp_town; }?>">
 									</div>
 									<div class="col-md-3">
 										<label>Current Assigned UC's</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="assigned_ucs" class="form-control input-sm" required="">
+										<input type="text" name="assigned_ucs" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->assigned_ucs; }?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -102,13 +100,13 @@
 										<label>Area / Sub Area</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="area" class="form-control input-sm" required="">
+										<input type="text" name="area" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->area; }?>">
 									</div>
 									<div class="col-md-3">
 										<label>Job Title</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="job_title" class="form-control input-sm" value="CHW" readonly="">
+										<input type="text" name="job_title" class="form-control input-sm" value="CHW" readonly="" value="<?php if(!empty(@$edit)){ echo @$edit->job_title; }?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -116,13 +114,13 @@
 										<label>Date of Joining</label>
 									</div>
 									<div class="col-md-3">
-										<input type="date" name="doj" class="form-control input-sm" required="">
+										<input type="date" name="doj" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->doj; }?>">
 									</div>
 									<div class="col-md-3">
 										<label>Period covered by Performance Appraisal</label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="period" class="form-control input-sm" required="">
+										<input type="text" name="period" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->period_covered; }?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -130,7 +128,7 @@
 										Appraisal Conducted by (First level Supervisor Name & Designation):
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="name_desig" class="form-control input-sm" required="" placeholder="Name...">
+										<input type="text" name="name_desig" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->sup_name_desig; }?>">
 									</div>
 									<div class="col-md-3">
 										<input type="text" name="desig_first" class="form-control input-sm" required="" placeholder="Designation...">
@@ -186,9 +184,9 @@
 									<div class="col-md-2">
 										<select name="b1_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->b1_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->b1_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->b1_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -253,9 +251,9 @@
 									<div class="col-md-2">
 										<select name="b2_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->b2_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->b2_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->b2_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -302,9 +300,9 @@
 									<div class="col-md-2">
 										<select name="b3_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->b3_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->b3_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->b3_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -351,9 +349,9 @@
 									<div class="col-md-2">
 										<select name="b4_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->b4_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->b4_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->b4_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -391,9 +389,9 @@
 									<div class="col-md-2">
 										<select name="b5_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->b5_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->b5_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->b5_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -422,9 +420,9 @@
 									<div class="col-md-2">
 										<select name="b6_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->b6_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->b6_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->b6_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -451,7 +449,7 @@
 										<i>Sub Total of Section B with 60% performance weightage </i>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="sub_total" class="form-control input-sm" readonly="">
+										<input type="text" name="sub_total" class="form-control input-sm" readonly="" value="<?php echo @$edit->b1_record + @$edit->b2_record + @$edit->b3_record + @$edit->b4_record + @$edit->b5_record + @$edit->b6_record; ?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -466,9 +464,9 @@
 									<div class="col-md-2">
 										<select name="c1_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->c1_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->c1_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->c1_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -488,9 +486,9 @@
 									<div class="col-md-2">
 										<select name="c2_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->c2_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->c2_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->c2_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -510,9 +508,9 @@
 									<div class="col-md-2">
 										<select name="c3_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->c3_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->c3_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->c3_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -532,9 +530,9 @@
 									<div class="col-md-2">
 										<select name="c4_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->c4_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->c4_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->c4_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -554,9 +552,9 @@
 									<div class="col-md-2">
 										<select name="c5_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->c5_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->c5_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->c5_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -583,7 +581,7 @@
 										<i>Sub Total of Section C with 30% performance weightage</i>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="sub_total" class="form-control input-sm" readonly="">
+										<input type="text" name="sub_total" class="form-control input-sm" readonly="" value="<?php echo @$edit->c1_record + @$edit->c2_record + @$edit->c3_record + @$edit->c4_record + @$edit->c5_record; ?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -598,9 +596,9 @@
 									<div class="col-md-2">
 										<select name="d1_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->d1_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->d1_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->d1_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -629,9 +627,9 @@
 									<div class="col-md-2">
 										<select name="d2_record" class="form-control input-sm" required="">
 											<option value="">Select Score</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
+											<option value="1" <?php if(!empty(@$edit AND @$edit->d2_record == '1')){ echo 'selected'; } ?>>1</option>
+											<option value="2" <?php if(!empty(@$edit AND @$edit->d2_record == '2')){ echo 'selected'; } ?>>2</option>
+											<option value="3" <?php if(!empty(@$edit AND @$edit->d2_record == '3')){ echo 'selected'; } ?>>3</option>
 										</select>
 									</div>
 								</div><hr>
@@ -649,7 +647,7 @@
 										<i>Sub Total of Section D with 10% performance weightage </i>
 									</div>
 									<div class="col-md-2">
-										<input type="text" name="sub_total" class="form-control input-sm" readonly="">
+										<input type="text" name="sub_total" class="form-control input-sm" readonly="" value="<?php echo @$edit->d1_record + @$edit->d2_record; ?>">
 									</div>
 								</div><hr>
 								<div class="row" style="background: lightblue;">
@@ -686,10 +684,10 @@
 											<tbody>
 												<tr>
 													<td>
-														<input type="date" name="date_of_issue" class="form-control input-sm">
+														<input type="date" name="date_of_issue" class="form-control input-sm" value="<?php if(!empty(@$edit)){ echo @$edit->disc_issue_date; } ?>">
 													</td>
 													<td>
-														<input type="text" name="warning" class="form-control input-sm" placeholder="Warning">
+														<input type="text" name="warning" class="form-control input-sm" value="<?php if(!empty(@$edit)){ echo @$edit->disc_warning; } ?>">
 													</td>
 													<td>
 														<select name="reason" class="form-control input-sm">
@@ -753,10 +751,10 @@
 												</tr>
 												<tr>
 													<td>
-														<input type="date" name="date_of_issue1" class="form-control input-sm">
+														<input type="date" name="date_of_issue1" class="form-control input-sm" value="<?php if(!empty(@$edit)){ echo @$edit->disc_date_1; } ?>">
 													</td>
 													<td>
-														<input type="text" name="warning1" class="form-control input-sm" placeholder="Warning">
+														<input type="text" name="warning1" class="form-control input-sm" value="<?php if(!empty(@$edit)){ echo @$edit->disc_warning_1; } ?>">
 													</td>
 													<td>
 														<select name="reason1" class="form-control input-sm">
@@ -820,10 +818,10 @@
 												</tr>
 												<tr>
 													<td>
-														<input type="date" name="date_of_issue2" class="form-control input-sm">
+														<input type="date" name="date_of_issue2" class="form-control input-sm" value="<?php if(!empty(@$edit)){ echo @$edit->disc_date_2; } ?>">
 													</td>
 													<td>
-														<input type="text" name="warning2" class="form-control input-sm" placeholder="Warning">
+														<input type="text" name="warning2" class="form-control input-sm" value="<?php if(!empty(@$edit)){ echo @$edit->disc_warning_2; } ?>">
 													</td>
 													<td>
 														<select name="reason2" class="form-control input-sm">
@@ -902,7 +900,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<p>Describe atleast one learing activity that you have pursued during the reporting period and also the activity you would like to carry out during the next reporting period</p>
-										<textarea name="learing" class="form-control" rows="5"></textarea>
+										<textarea name="learing" class="form-control" rows="5"><?php if(!empty(@$edit)){ echo @$edit->cont_learning; } ?></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -913,7 +911,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<p>Describe your future career aspirations indicating newly acquired skills and competencies as well as development needs (Optional)</p>
-										<textarea name="career" class="form-control" rows="5"></textarea>
+										<textarea name="career" class="form-control" rows="5" required=""><?php if(!empty(@$edit)){ echo @$edit->career_development; } ?></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -923,18 +921,18 @@
 								</div><hr>
 								<div class="row">
 									<div class="col-md-12">
-										<textarea name="staff_comments" class="form-control" rows="5"></textarea>
+										<textarea name="staff_comments" class="form-control" rows="5" required=""><?php if(!empty(@$edit)){ echo @$edit->staff_comments; } ?></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
 									<div class="col-md-4">
-										<input type="text" name="staff_name" class="form-control input-sm" placeholder="Staff member name...">
+										<input type="text" name="staff_name" class="form-control input-sm" placeholder="Staff member name..." required="" value="<?php if(!empty(@$edit)){ echo @$edit->staff_name; } ?>">
 									</div>
 									<div class="col-md-4">
-										<input type="text" name="staff_sign" class="form-control input-sm" placeholder="Signature">
+										<input type="text" name="staff_sign" class="form-control input-sm" placeholder="Signature" required="" value="<?php if(!empty(@$edit)){ echo @$edit->staff_sign; } ?>">
 									</div>
 									<div class="col-md-4">
-										<input type="date" name="staff_date" class="form-control input-sm">
+										<input type="date" name="staff_date" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->staff_date; } ?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -946,11 +944,11 @@
 									<div class="col-md-12">
 										<strong>First Reporting Officer- Area Supervisor</strong><br><br>
 										Would you consider the staff member for a contract extension? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="town_comments" value="Yes"> YES &nbsp;&nbsp;&nbsp;
-										<input type="radio" name="town_comments" value="No"> NO <br><br>
+										<input type="radio" name="town_comments" value="Yes" required="" <?php if(!empty(@$edit AND @$edit->first_sec_rep_officer == 'Yes')){ echo 'checked'; } ?>> YES &nbsp;&nbsp;&nbsp;
+										<input type="radio" name="town_comments" value="No" required="" <?php if(!empty(@$edit AND @$edit->first_sec_rep_officer == 'No')){ echo 'checked'; } ?>> NO <br><br>
 										Is the staff Member more suited for some other type of work/promotion other than that in which he/she is employed? If so, state the functions which are suited to his/her ability <br>
 										<strong>Remarks: </strong>
-										<textarea name="remarks" class="form-control" rows="4"></textarea>
+										<textarea name="remarks" class="form-control" rows="4" required=""><?php if(!empty(@$edit)){ echo @$edit->first_sec_remarks; } ?></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -958,13 +956,13 @@
 										<label>Name of second reporting officer: </label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="second_officer" class="form-control input-sm">
+										<input type="text" name="second_officer" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->sec_off_name; } ?>">
 									</div>
 									<div class="col-md-3">
 										<label>Title: </label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="second_title" class="form-control input-sm">
+										<input type="text" name="second_title" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->sec_off_title; } ?>">
 									</div>
 								</div><br>
 								<div class="row">
@@ -972,23 +970,23 @@
 										<label>Signature: </label>
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="second_sign" class="form-control input-sm">
+										<input type="text" name="second_sign" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->sec_off_sign; } ?>">
 									</div>
 									<div class="col-md-3">
 										<label>Date: </label>
 									</div>
 									<div class="col-md-3">
-										<input type="date" name="second_date" class="form-control input-sm">
+										<input type="date" name="second_date" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->sec_off_date; } ?>">
 									</div>
 								</div><hr>
 								<div class="row">
 									<div class="col-md-12">
 										<strong>CTC District/Town Coordinator</strong><br>
 										Would you consider the staff member for a contract extension? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="ctc_coord" value="Yes"> YES &nbsp;&nbsp;&nbsp;&nbsp;
-										<input type="radio" name="ctc_coord" value="No"> NO <br><br>
+										<input type="radio" name="ctc_coord" value="Yes" required="" required="" <?php if(!empty(@$edit AND @$edit->ctc_coord_com == 'Yes')){ echo 'checked'; } ?>> YES &nbsp;&nbsp;&nbsp;&nbsp;
+										<input type="radio" name="ctc_coord" value="No" required="" <?php if(!empty(@$edit AND @$edit->ctc_coord_com == 'No')){ echo 'checked'; } ?>> NO <br><br>
 										<strong>Remarks: </strong>
-										<textarea name="ctc_coord_remarks" class="form-control" rows="4"></textarea>
+										<textarea name="ctc_coord_remarks" class="form-control" rows="4" required=""><?php if(!empty(@$edit)){ echo @$edit->ctc_coord_remarks; } ?></textarea>
 									</div>
 								</div><hr>
 								<div class="row">
@@ -996,13 +994,13 @@
 											<label>Name of CTC Staff: </label>
 										</div>
 										<div class="col-md-3">
-											<input type="text" name="ctc_name" class="form-control input-sm">
+											<input type="text" name="ctc_name" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->ctc_coord_name; } ?>">
 										</div>
 										<div class="col-md-3">
 											<label>Title: </label>
 										</div>
 										<div class="col-md-3">
-											<input type="text" name="ctc_title" class="form-control input-sm">
+											<input type="text" name="ctc_title" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->ctc_coord_title; } ?>">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1010,13 +1008,13 @@
 											<label>Signature: </label>
 										</div>
 										<div class="col-md-3">
-											<input type="text" name="ctc_sign" class="form-control input-sm">
+											<input type="text" name="ctc_sign" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->ctc_coord_sign; } ?>">
 										</div>
 										<div class="col-md-3">
 											<label>Date: </label>
 										</div>
 										<div class="col-md-3">
-											<input type="date" name="ctc_date" class="form-control input-sm">
+											<input type="date" name="ctc_date" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->ctc_coord_date; } ?>">
 										</div>
 									</div><hr>
 									<div class="row">
@@ -1024,7 +1022,7 @@
 											Category: 
 										</div>
 										<div class="col-md-4">
-											<input type="text" name="cat_a" class="form-control input-sm" readonly="">
+											<input type="text" name="cat_a" class="form-control input-sm" readonly="" value="<?php if(!empty(@$edit)){ echo $edit->cat_a; } ?>">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1032,7 +1030,7 @@
 											<label>Filled by: </label>
 										</div>
 										<div class="col-md-4">
-											<input type="text" name="filler_name" class="form-control input-sm" placeholder="Form filler name...">
+											<input type="text" name="filler_name" class="form-control input-sm" placeholder="Form filler name..." required="" value="<?php if(!empty(@$edit)){ echo @$edit->filler_name; } ?>">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1042,19 +1040,21 @@
 										<div class="col-md-4">
 											<select name="filler_desig" class="form-control input-sm" required="">
 												<option value="">Select Designation</option>
-												<option value="Regional Manager">Regional Manager</option>
-												<option value="District Manager">District Manager</option>
-												<option value="Town Manager">Town Manager</option>
-												<option value="Project Officer">Project Officer</option>
-												<option value="Project Associate">Project Associate</option>
-												<option value="Data Entry Operator">Data Entry Operator</option>
+												<option value="Regional Manager" <?php if(!empty(@$edit AND @$edit->filler_desig == 'Regional Manager')){ echo 'selected'; } ?>>Regional Manager</option>
+												<option value="District Manager" <?php if(!empty(@$edit AND @$edit->filler_desig == 'District Manager')){ echo 'selected'; } ?>>District Manager</option>
+												<option value="Town Manager" <?php if(!empty(@$edit AND @$edit->filler_desig == 'Town Manager')){ echo 'selected'; } ?>>Town Manager</option>
+												<option value="Project Officer" <?php if(!empty(@$edit AND @$edit->filler_desig == 'Project Officer')){ echo 'selected'; } ?>>Project Officer</option>
+												<option value="Project Associate" <?php if(!empty(@$edit AND @$edit->filler_desig == 'Project Associate')){ echo 'selected'; } ?>>Project Associate</option>
+												<option value="Data Entry Operator" <?php if(!empty(@$edit AND @$edit->filler_desig == 'Data Entry Operator')){ echo 'selected'; } ?>>Data Entry Operator</option>
 											</select>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-10">
 											<div class="submitBtn">
-											<button type="submit" class="btn btn-primary">Save</button>
+											<button type="submit" class="btn btn-primary">
+											<?php if(!empty(@$edit)): ?> Update <?php else: ?> Save <?php endif; ?>
+											</button>
 											<button type="reset" class="btn btn-default">Reset</button>
 											</div>
 										</div>
@@ -1068,31 +1068,3 @@
 		</div>
 	</section>
 </section>
-<!-- Select employee and his/her address will populate itself in the dropdown list. -->
-<script type="text/javascript">
-	// $(document).ready(function(){
-	// 	$('select[name="emp_name"]').on('change', function(){
-	// 		var empID = $(this).val();
-	// 		if(empID){
-	// 			$.ajax({
-	// 				url: '<?php echo base_url("Performance_evaluation/get_address_ucpos/"); ?>'+empID,
-	// 				type: 'post',
-	// 				dataType: 'json',
-	// 				success: function(data){
-	// 					console.log(data); // Log data to the console.
-	// 					$('select[name="duty_province"]').empty();
-	// 					$('select[name="duty_distt"]').empty();
-	// 					$('select[name="duty_tehsil"]').empty();
-	// 					$('select[name="duty_province"]').append('<option value="'+ data.province +'">'+ data.province +'</option>');
-	// 					$('select[name="duty_distt"]').append('<option value="'+ data.district +'" selected>'+ data.district +'</option>');
-	// 					$('select[name="duty_tehsil"]').append('<option value="'+ data.tehsil +'" selected>'+ data.tehsil +'</option>');
-	// 				}
-	// 			});
-	// 		}else{
-	// 			$('select[name="duty_province"]').empty();
-	// 			$('select[name="duty_distt"]').empty();
-	// 			$('select[name="duty_tehsil"]').empty();
-	// 		}
-	// 	});
-	// });
-</script>

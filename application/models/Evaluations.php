@@ -22,9 +22,16 @@ class Evaluations extends CI_Model
     		return FALSE;
     	}
     }
+    // Count all results to create pagination.
+    public function count_chws(){
+        return $this->db->from('chw_evaluations')->count_all_results();
+    }
     // Get CHW evaluations from the database.
-    public function get_chw_evaluations(){
-    	return $this->db->get('chw_evaluations')->result();
+    public function get_chw_evaluations($limit, $offset){
+    	$this->db->select('*');
+        $this->db->from('chw_evaluations');
+        $this->db->limit($limit, $offset);
+        return $this->db->get()->result();
     }
     // Search in CHW evaluations.
     public function search_chws($cnic = ''){
@@ -32,6 +39,19 @@ class Evaluations extends CI_Model
         $this->db->from('chw_evaluations');
         $this->db->where('emp_cnic', $cnic);
         return $this->db->get()->row();
+    }
+    // Get CHW's for edit.
+    public function edit_chws($chw_id){
+        $this->db->select('*');
+        $this->db->from('chw_evaluations');
+        $this->db->where('chw_id', $chw_id);
+        return $this->db->get()->row();
+    }
+    // Update CHW's.
+    public function update_chws($chw_id = '', $data = ''){
+        $this->db->where('chw_id', $chw_id);
+        $this->db->update('chw_evaluations', $data);
+        return true;
     }
     // Export the saved data to excel sheet.
     public function get_for_excel(){
