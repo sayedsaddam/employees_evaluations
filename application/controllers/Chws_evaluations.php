@@ -57,7 +57,9 @@ class Chws_evaluations extends CI_Controller
     		'doj' => $this->input->post('doj'),
     		'period_covered' => $this->input->post('period'),
     		'sup_name_desig' => $this->input->post('name_desig'),
+            'desig_first' => $this->input->post('desig_first'),
             'sec_supname_desig' => $this->input->post('sec_desig'),
+            'desig_sec' => $this->input->post('desig_sec'),
     		'rep_purpose' => $this->input->post('purpose'),
     		'b1_record' => $this->input->post('b1_record'),
     		'b2_record' => $this->input->post('b2_record'),
@@ -173,7 +175,9 @@ class Chws_evaluations extends CI_Controller
             'doj' => $this->input->post('doj'),
             'period_covered' => $this->input->post('period'),
             'sup_name_desig' => $this->input->post('name_desig'),
+            'desig_first' => $this->input->post('desig_first'),
             'sec_supname_desig' => $this->input->post('sec_desig'),
+            'desig_sec' => $this->input->post('sec_desig'),
             'rep_purpose' => $this->input->post('purpose'),
             'b1_record' => $this->input->post('b1_record'),
             'b2_record' => $this->input->post('b2_record'),
@@ -241,6 +245,8 @@ class Chws_evaluations extends CI_Controller
             'period_covered' => $this->input->post('period'),
             'sup_name_desig' => $this->input->post('name_desig'),
             'sec_supname_desig' => $this->input->post('sec_desig'),
+            'sec_supervisor_name' => $this->input->post('desig_first'),
+            'sec_supervisor_desig' => $this->input->post('desig_sec'),
             'rep_purpose' => $this->input->post('purpose'),
             'b1_record' => $this->input->post('b1_record'),
             'b2_record' => $this->input->post('b2_record'),
@@ -354,7 +360,6 @@ class Chws_evaluations extends CI_Controller
         $sheet->setCellValue('U1', 'Teamwork ( can work in collaboration with other team members to achieve goals, assists team members)');  
         $sheet->setCellValue('V1', 'Attendance and Late Coming');  
         $sheet->setCellValue('W1', 'Previous Adminstrative History in past year(Final Warning- Poor Counseling/Warning- Need improvement No Admin History - Satisfactory)');
-        $sheet->setCellValue('X1', 'Communication skills (e.g has good convincing skills, active listening skills etc)');
 
         $rows = 2;
         foreach ($evalData as $val){
@@ -364,9 +369,9 @@ class Chws_evaluations extends CI_Controller
             $sheet->setCellValue('D' . $rows, $val['assigned_ucs']);
             $sheet->setCellValue('E' . $rows, $val['emp_cnic']);
             $sheet->setCellValue('F' . $rows, $val['doj']);
-            $sheet->setCellValue('G' . $rows, 'Promotion history');
-            $sheet->setCellValue('H' . $rows, $val['sup_name_desig']);
-            $sheet->setCellValue('I' . $rows, $val['ctc_coord_remarks']);
+            $sheet->setCellValue('G' . $rows, $val['']);
+            $sheet->setCellValue('H' . $rows, $val['sup_name_desig'].', '.$val['desig_first']);
+            $sheet->setCellValue('I' . $rows, $val['created_at']);
             $sheet->setCellValue('J' . $rows, $val['b1_record']);
             $sheet->setCellValue('K' . $rows, $val['b2_record']);
             $sheet->setCellValue('L' . $rows, $val['b3_record']);
@@ -381,7 +386,6 @@ class Chws_evaluations extends CI_Controller
             $sheet->setCellValue('U' . $rows, $val['d1_record']);
             $sheet->setCellValue('V' . $rows, $val['d2_record']);
             $sheet->setCellValue('W' . $rows, $val['ctc_coord_title']);
-            $sheet->setCellValue('X' . $rows, $val['cat_a']);
             $rows++;
         } 
         $writer = new Xlsx($spreadsheet);

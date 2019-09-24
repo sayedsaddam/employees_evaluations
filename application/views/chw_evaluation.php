@@ -131,7 +131,7 @@
 										<input type="text" name="name_desig" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo @$edit->sup_name_desig; }?>">
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="desig_first" class="form-control input-sm" required="" placeholder="Designation...">
+										<input type="text" name="desig_first" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo $edit->desig_first; } ?>">
 									</div>
 								</div><hr>
 								<div class="row">
@@ -139,10 +139,10 @@
 										Appraisal Conducted by (Second level Supervisor Name & Designation):
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="sec_desig" class="form-control input-sm" required="" placeholder="Name...">
+										<input type="text" name="sec_desig" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo $edit->sec_supname_desig; } ?>">
 									</div>
 									<div class="col-md-3">
-										<input type="text" name="desig_sec" class="form-control input-sm" required="" placeholder="Designation...">
+										<input type="text" name="desig_sec" class="form-control input-sm" required="" value="<?php if(!empty(@$edit)){ echo $edit->desig_sec; } ?>">
 									</div>
 								</div><hr>
 								<div class="row">
