@@ -1,7 +1,7 @@
 <?php 
 /*
-* Filename: recent_chws.php
-* Filepath: views / recent_chws.php
+* Filename: recent_dhcsos.php
+* Filepath: views / recent_dhcsos.php
 * Author: Saddam
 */
 ?>
@@ -61,16 +61,16 @@ $(document).ready(function() {
         <div class="row">
           <div class="col-md-8">
             <div class="tabelHeading">
-              <h3><?php if(empty($search_results)): ?> recently added CHW evaluations | <?php else: ?>
+              <h3><?php if(empty($search_results)): ?> recently added DHCSO evaluations | <?php else: ?>
                 search results | <?php endif; ?>
                 <small>
                   <a href="javascript:history.go(-1);" class="btn btn-warning btn-xs">
                       <i class="fa fa-angle-double-left"></i> back
                   </a>
-                  <a href="<?= base_url('chws_evaluations'); ?>" class="btn btn-primary btn-xs">
+                  <a href="<?= base_url('dhcso_evaluations'); ?>" class="btn btn-primary btn-xs">
                       <i class="fa fa-plus"></i> add new evaluation
                   </a>
-                  <a href="<?php echo base_url('chws_evaluations/export_excel'); ?>" class="btn btn-success btn-xs">
+                  <a href="<?php echo base_url('dhcso_evaluations/export_excel_dhcso'); ?>" class="btn btn-success btn-xs">
                     Export to Excel
                   </a>
                 </small>
@@ -78,7 +78,7 @@ $(document).ready(function() {
             </div>
           </div>
           <div class="col-md-4">
-            <form action="<?php echo base_url('chws_evaluations/search_as'); ?>" method="get" style="margin-top: 14px; padding-right: 12px;">
+            <form action="<?php echo base_url('dhcso_evaluations/search_dhcsos'); ?>" method="get" style="margin-top: 14px; padding-right: 12px;">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search by CNIC" autocomplete="off" required="" name="search_record">
                   <div class="input-group-btn">
@@ -125,7 +125,7 @@ $(document).ready(function() {
                   </thead>
                   <?php if(empty($search_results)): ?>
                   <tbody id="filter_results">
-                    <?php foreach($recent_as as $rec_evals): ?>
+                    <?php foreach($recent_dhcsos as $rec_evals): ?>
                     <tr>
                       <td>
                         <?php echo $rec_evals->emp_id; ?>
@@ -155,10 +155,10 @@ $(document).ready(function() {
                         <?php echo $rec_evals->rep_purpose; ?>
                       </td>
                       <td>
-                        <?php echo $total =  $rec_evals->b1_record + $rec_evals->b2_record + $rec_evals->b3_record + $rec_evals->b4_record + $rec_evals->b5_record + $rec_evals->b6_record; ?>
+                        <?php echo $total =  $rec_evals->b1_record + $rec_evals->b2_record + $rec_evals->b3_record + $rec_evals->b4_record + $rec_evals->b5_record + $rec_evals->b6_record + $rec_evals->b7_record; ?>
                       </td>
                       <td>
-                        <?php echo $rec_evals->c1_record + $rec_evals->c2_record + $rec_evals->c3_record + $rec_evals->c4_record + $rec_evals->c4_record; ?>
+                        <?php echo $rec_evals->c1_record + $rec_evals->c2_record + $rec_evals->c3_record + $rec_evals->c4_record + $rec_evals->c4_record + $rec_evals->c5_record; ?>
                       </td>
                       <td>
                         <?php echo $rec_evals->d1_record + $rec_evals->d2_record; ?>
@@ -170,7 +170,7 @@ $(document).ready(function() {
                         <?php echo date('M d, Y', strtotime($rec_evals->created_at)); ?>
                       </td>
                       <td>
-                        <a href="<?php echo base_url(); ?>chws_evaluations/edit_as/<?php echo $rec_evals->as_id; ?>" class="btn btn-primary btn-xs">Edit</a>
+                        <a href="<?php echo base_url(); ?>dhcso_evaluations/edit_dhcso/<?php echo $rec_evals->dhcso_id; ?>" class="btn btn-primary btn-xs">Edit</a>
                       </td>
                     </tr>
                     <?php endforeach; ?>
@@ -206,10 +206,10 @@ $(document).ready(function() {
                         <?php echo $search_results->rep_purpose; ?>
                       </td>
                       <td>
-                        <?php echo $total =  $search_results->b1_record + $search_results->b2_record + $search_results->b3_record + $search_results->b4_record + $search_results->b5_record + $search_results->b6_record; ?>
+                        <?php echo $total =  $search_results->b1_record + $search_results->b2_record + $search_results->b3_record + $search_results->b4_record + $search_results->b5_record + $search_results->b6_record + $search_results->b7_record; ?>
                       </td>
                       <td>
-                        <?php echo $search_results->c1_record + $search_results->c2_record + $search_results->c3_record + $search_results->c4_record + $search_results->c4_record; ?>
+                        <?php echo $search_results->c1_record + $search_results->c2_record + $search_results->c3_record + $search_results->c4_record + $search_results->c4_record + $search_results->c5_record; ?>
                       </td>
                       <td>
                         <?php echo $search_results->d1_record + $search_results->d2_record; ?>
@@ -221,7 +221,7 @@ $(document).ready(function() {
                         <?php echo date('M d, Y', strtotime($search_results->created_at)); ?>
                       </td>
                       <td>
-                        <a href="<?php echo base_url(); ?>chws_evaluations/edit_as/<?php echo $search_results->as_id; ?>" class="btn btn-primary btn-xs">Edit</a>
+                        <a href="<?php echo base_url(); ?>dhcso_evaluations/edit_dhcso/<?php echo $search_results->dhcso_id; ?>" class="btn btn-primary btn-xs">Edit</a>
                       </td>
                     </tr>
                   </tbody>

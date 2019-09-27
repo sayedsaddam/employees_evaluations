@@ -43,10 +43,10 @@
           <a href="<?php echo base_url('chws_evaluations/as_evaluation'); ?>">AS's Evaluation</a>
         </li>
         <li>
-          <a href="<?php echo base_url('chws_evaluations/uco_evaluation'); ?>">UCO's Evaluation</a>
+          <a href="<?php echo base_url('uco_evaluations'); ?>">UCO's Evaluation</a>
         </li>
         <li>
-          <a href="<?php echo base_url('chws_evaluations/dhcso_evaluation'); ?>">DHCSO's Evaluation</a>
+          <a href="<?php echo base_url('dhcso_evaluations'); ?>">DHCSO's Evaluation</a>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

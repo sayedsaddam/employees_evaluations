@@ -691,7 +691,7 @@
 													</td>
 													<td>
 														<select name="reason" class="form-control input-sm">
-															<option value="">Select Reason</option>
+															<option value="<?php if(!empty(@$edit AND @$edit->disc_reason != NULL)){ echo 'selected'; } ?>"><?php echo @$edit->disc_reason; ?></option>
 															<option value="Kinship">Kinship</option>
 															<option value="Locality">Locality</option>
 															<option value="Political Involvement">Political Involvement</option>
@@ -758,7 +758,7 @@
 													</td>
 													<td>
 														<select name="reason1" class="form-control input-sm">
-															<option value="">Select Reason</option>
+															<option value="<?php if(!empty(@$edit AND @$edit->disc_reason_1 != NULL)){ echo 'selected'; } ?>"><?php echo @$edit->disc_reason_1; ?></option>
 															<option value="Kinship">Kinship</option>
 															<option value="Locality">Locality</option>
 															<option value="Political Involvement">Political Involvement</option>
@@ -825,7 +825,7 @@
 													</td>
 													<td>
 														<select name="reason2" class="form-control input-sm">
-															<option value="">Select Reason</option>
+															<option value="<?php if(!empty(@$edit AND @$edit->disc_reason_2 != NULL)){ echo 'selected'; } ?>"><?php echo @$edit->disc_reason_2; ?></option>
 															<option value="Kinship">Kinship</option>
 															<option value="Locality">Locality</option>
 															<option value="Political Involvement">Political Involvement</option>
@@ -1030,7 +1030,7 @@
 											<label>Filled by: </label>
 										</div>
 										<div class="col-md-4">
-											<input type="text" name="filler_name" class="form-control input-sm" placeholder="Form filler name..." required="" value="<?php if(!empty(@$edit)){ echo @$edit->filler_name; } ?>">
+											<input type="text" name="filler_name" class="form-control input-sm" placeholder="Form filler name..." value="<?php if(!empty(@$edit)){ echo @$edit->filler_name; } ?>">
 										</div>
 									</div><br>
 									<div class="row">
@@ -1038,7 +1038,7 @@
 											<label>Designation: </label>
 										</div>
 										<div class="col-md-4">
-											<select name="filler_desig" class="form-control input-sm" required="">
+											<select name="filler_desig" class="form-control input-sm">
 												<option value="">Select Designation</option>
 												<option value="Regional Manager" <?php if(!empty(@$edit AND @$edit->filler_desig == 'Regional Manager')){ echo 'selected'; } ?>>Regional Manager</option>
 												<option value="District Manager" <?php if(!empty(@$edit AND @$edit->filler_desig == 'District Manager')){ echo 'selected'; } ?>>District Manager</option>

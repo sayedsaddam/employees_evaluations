@@ -1,7 +1,7 @@
 <?php 
 /*
-* Filename: recent_chws.php
-* Filepath: views / recent_chws.php
+* Filename: recent_ucos.php
+* Filepath: views / recent_ucos.php
 * Author: Saddam
 */
 ?>
@@ -61,16 +61,16 @@ $(document).ready(function() {
         <div class="row">
           <div class="col-md-8">
             <div class="tabelHeading">
-              <h3><?php if(empty($search_results)): ?> recently added CHW evaluations | <?php else: ?>
+              <h3><?php if(empty($search_results)): ?> recently added UCO evaluations | <?php else: ?>
                 search results | <?php endif; ?>
                 <small>
                   <a href="javascript:history.go(-1);" class="btn btn-warning btn-xs">
                       <i class="fa fa-angle-double-left"></i> back
                   </a>
-                  <a href="<?= base_url('chws_evaluations'); ?>" class="btn btn-primary btn-xs">
+                  <a href="<?= base_url('uco_evaluations'); ?>" class="btn btn-primary btn-xs">
                       <i class="fa fa-plus"></i> add new evaluation
                   </a>
-                  <a href="<?php echo base_url('chws_evaluations/export_excel'); ?>" class="btn btn-success btn-xs">
+                  <a href="<?php echo base_url('uco_evaluations/export_excel'); ?>" class="btn btn-success btn-xs">
                     Export to Excel
                   </a>
                 </small>
@@ -78,7 +78,7 @@ $(document).ready(function() {
             </div>
           </div>
           <div class="col-md-4">
-            <form action="<?php echo base_url('chws_evaluations/search_as'); ?>" method="get" style="margin-top: 14px; padding-right: 12px;">
+            <form action="<?php echo base_url('uco_evaluations/search_ucos'); ?>" method="get" style="margin-top: 14px; padding-right: 12px;">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search by CNIC" autocomplete="off" required="" name="search_record">
                   <div class="input-group-btn">
@@ -125,7 +125,7 @@ $(document).ready(function() {
                   </thead>
                   <?php if(empty($search_results)): ?>
                   <tbody id="filter_results">
-                    <?php foreach($recent_as as $rec_evals): ?>
+                    <?php foreach($recent_ucos as $rec_evals): ?>
                     <tr>
                       <td>
                         <?php echo $rec_evals->emp_id; ?>
@@ -146,7 +146,7 @@ $(document).ready(function() {
                         <?php echo $rec_evals->emp_district; ?>
                       </td>
                       <td>
-                        <?php echo date('M d, Y', strtotime($rec_evals->doj)); ?>
+                        <?php echo $rec_evals->doj; ?>
                       </td>
                       <td>
                         <?php echo $rec_evals->period_covered; ?>
@@ -170,7 +170,7 @@ $(document).ready(function() {
                         <?php echo date('M d, Y', strtotime($rec_evals->created_at)); ?>
                       </td>
                       <td>
-                        <a href="<?php echo base_url(); ?>chws_evaluations/edit_as/<?php echo $rec_evals->as_id; ?>" class="btn btn-primary btn-xs">Edit</a>
+                        <a href="<?php echo base_url(); ?>uco_evaluations/edit_uco/<?php echo $rec_evals->uco_id; ?>" class="btn btn-primary btn-xs">Edit</a>
                       </td>
                     </tr>
                     <?php endforeach; ?>
@@ -197,7 +197,7 @@ $(document).ready(function() {
                         <?php echo $search_results->emp_district; ?>
                       </td>
                       <td>
-                        <?php echo date('M d, Y', strtotime($search_results->doj)); ?>
+                        <?php echo $search_results->doj; ?>
                       </td>
                       <td>
                         <?php echo $search_results->period_covered; ?>
@@ -221,7 +221,7 @@ $(document).ready(function() {
                         <?php echo date('M d, Y', strtotime($search_results->created_at)); ?>
                       </td>
                       <td>
-                        <a href="<?php echo base_url(); ?>chws_evaluations/edit_as/<?php echo $search_results->as_id; ?>" class="btn btn-primary btn-xs">Edit</a>
+                        <a href="<?php echo base_url(); ?>uco_evaluations/edit_uco/<?php echo $search_results->uco_id; ?>" class="btn btn-primary btn-xs">Edit</a>
                       </td>
                     </tr>
                   </tbody>
