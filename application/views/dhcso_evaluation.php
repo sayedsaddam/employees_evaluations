@@ -655,7 +655,7 @@
 													</td>
 													<td>
 														<select name="reason" class="form-control input-sm">
-															<option value="">Select Reason</option>
+															<option value="<?php if(!empty(@$edit AND @$edit->disc_reason != NULL)){ echo 'selected'; } ?>"><?php echo @$edit->disc_reason; ?></option>
 															<option value="Kinship">Kinship</option>
 															<option value="Locality">Locality</option>
 															<option value="Political Involvement">Political Involvement</option>
@@ -722,7 +722,7 @@
 													</td>
 													<td>
 														<select name="reason1" class="form-control input-sm">
-															<option value="">Select Reason</option>
+															<option value="<?php if(!empty(@$edit AND @$edit->disc_reason_1 != NULL)){ echo 'selected'; } ?>"><?php echo @$edit->disc_reason_1; ?></option>
 															<option value="Kinship">Kinship</option>
 															<option value="Locality">Locality</option>
 															<option value="Political Involvement">Political Involvement</option>
@@ -789,7 +789,7 @@
 													</td>
 													<td>
 														<select name="reason2" class="form-control input-sm">
-															<option value="">Select Reason</option>
+															<option value="<?php if(!empty(@$edit AND @$edit->disc_reason_2 != NULL)){ echo 'selected'; } ?>"><?php echo @$edit->disc_reason_2; ?></option>
 															<option value="Kinship">Kinship</option>
 															<option value="Locality">Locality</option>
 															<option value="Political Involvement">Political Involvement</option>
